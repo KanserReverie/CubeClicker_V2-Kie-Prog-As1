@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Cube : MonoBehaviour
 {
@@ -14,12 +15,12 @@ public class Cube : MonoBehaviour
     private bool cubeBroke;
     private int MaxHealthOfCube;
     private Color CubeColorIncrease;
-    public TextMesh MoneyTextDesplay;
-
+    public TextMeshPro MoneyTextDesplay;
+    public GameObject MoneyText;
     // Gets Rigidbody
     private Rigidbody rb;
 
-    [SerializeField] private Material cubeMaterial;
+    private Material cubeMaterial;
     Renderer rend;
 
     public void CubeSetup(int _Row, int _Col, Color _FinalColor, int _Health, Color _UntouchColor, Material _CubeMaterial)
@@ -41,6 +42,13 @@ public class Cube : MonoBehaviour
         rend.sharedMaterial = _CubeMaterial;
 
         rend.material.color = cubeUntouchedColor;
+
+    }
+
+    // Might add particle system.
+    private void Update()
+    {
+        MoneyTextDesplay.text = cubeHealth + "/" + MaxHealthOfCube;
     }
 
     public bool Click()
@@ -59,11 +67,16 @@ public class Cube : MonoBehaviour
 
     public void Break(int _MoneyDrop)
     {
-        rend.material.color = cubeUntouchedColor;
-        cubeHealth = MaxHealthOfCube;
+        GameObject newMoneyText = new GameObject();
+
+        newMoneyText = Instantiate(MoneyText, transform.position, Quaternion.identity, transform);
+        newMoneyText.GetComponent<TextMesh>().text = ("$$ " + _MoneyDrop); ;
         // Will print the 3d $$ once broken.
         // Vector3 force = cubeRow * cubeColumn;
         // TextDisplay = ("$$ " + IntToString(_MoneyDrop));
+
+        rend.material.color = cubeUntouchedColor;
+        cubeHealth = MaxHealthOfCube;
     }
 
     private void CubeHit()
