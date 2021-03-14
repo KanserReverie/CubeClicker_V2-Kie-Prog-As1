@@ -69,8 +69,8 @@ public class Cube : MonoBehaviour
     {
         GameObject newMoneyText = new GameObject();
 
-        newMoneyText = Instantiate(MoneyText, transform.position, Quaternion.identity, transform);
-        newMoneyText.GetComponent<TextMesh>().text = ("$$ " + _MoneyDrop); ;
+        newMoneyText = Instantiate(MoneyText, transform.position+new Vector3(0,0.3f,0), Quaternion.identity, transform);
+        newMoneyText.GetComponent<TextMesh>().text = ("+$$" + _MoneyDrop); ;
         // Will print the 3d $$ once broken.
         // Vector3 force = cubeRow * cubeColumn;
         // TextDisplay = ("$$ " + IntToString(_MoneyDrop));

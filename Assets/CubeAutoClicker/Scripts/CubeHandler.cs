@@ -19,14 +19,12 @@ public class CubeHandler : MonoBehaviour
         // Distace between each Cube.
             // Called in Start() Instantiate.
             private float cubeDistanceBetweenCubes = 2;
-        // How much money made for breaking each cube.
-            // Right now you just get how many clicks it would have taken to break the cube /8.
-            // This can be changed later and might be changed in pets.
-            private int baseMoneyForBreakingCube = 1;
-        // Base health of cubes.
-            // Everything is pretty based, on 8.
-            // Will be changed in pets.
-            private int baseHealthOfCubes = 8;
+        // The base (e.g we are base 4) for breaking new cube.
+            private int moneyBaseIncreaseForBreakingCube = 4;
+    // Base health of cubes.
+    // Everything is pretty based, on 8.
+    // Will be changed in pets.
+    private int baseHealthOfCubes = 8;
         // This is an array of Cube. Remember these are still GameObjects.
             // To call Cube on each one you need:
                 // cubeGrid[x,y].GetComponent<Cube>().ScriptWantToCall;
@@ -114,8 +112,14 @@ public class CubeHandler : MonoBehaviour
 
      private int CubeBreakMoney(int _CubeRow, int _CubeCol)
      {
-         int MoneyGained = ((((_CubeRow) * ColMax) + (_CubeCol+1)) * baseMoneyForBreakingCube);
-         MoneyCount.MoneyGained(MoneyGained);
-         return MoneyGained;
+        int MoneyGained =                            // Used to be some confusing thing but basically:
+            (Mathf.RoundToInt                        //     Makes following int
+            (Mathf.Pow                               //         Puts following to power
+            (moneyBaseIncreaseForBreakingCube,       //             Base amount for killing cube in begining - e.g. 4
+            ((_CubeRow) * ColMax) + (_CubeCol)       //             Where the cube is in the array starting at 0
+            )));                                     //     Because computers start arrays at 0 anything > 0 to power of 0 = 1
+
+        MoneyCount.MoneyGained(MoneyGained);
+        return MoneyGained;
      }
 }

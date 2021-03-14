@@ -5,16 +5,12 @@ using UnityEngine;
 public class MoneyText : MonoBehaviour
 {
     // Will move up and then disapear after 2 seconds.
+    public Rigidbody rb;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(0, 4, 0);
+        Object.Destroy(gameObject, 1);
     }
 }
