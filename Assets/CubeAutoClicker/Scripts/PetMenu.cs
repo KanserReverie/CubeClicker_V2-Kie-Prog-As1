@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PetHandler : MonoBehaviour
+public class PetMenu : MonoBehaviour
 {
-    public List<Pet> Pets = new List<Pet>();
-
     // Start is called before the first frame update
     void Start()
     {

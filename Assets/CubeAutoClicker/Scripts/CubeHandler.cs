@@ -70,7 +70,6 @@ public class CubeHandler : MonoBehaviour
         {
             for (int x = 0; x < ColMax; x++)
             {
-                print("here" + ss + CubeGridColors[(y * ColMax + (x + 1)) - 1]);
                 ss++;
                 extraDistance = new Vector3(x * cubeDistanceBetweenCubes, 0, y * cubeDistanceBetweenCubes);
                 newCube = Instantiate(CubePrefab, transform.position + extraDistance, Quaternion.identity, transform) as GameObject;
@@ -122,4 +121,22 @@ public class CubeHandler : MonoBehaviour
         MoneyCount.MoneyGained(MoneyGained);
         return MoneyGained;
      }
+
+    public void IncreaseCubeMoney()
+    {
+        moneyBaseIncreaseForBreakingCube++;
+    }
+    public void DecreaseCubeHealth()
+    {   
+
+        baseHealthOfCubes--;
+        
+        for (int y = 0; y < RowMax; y++)
+        {
+            for (int x = 0; x < ColMax; x++)
+            {
+                cubeGrid[y, x].GetComponent<Cube>().CubeHealthDecrease();
+            }
+        }
+    }
 }

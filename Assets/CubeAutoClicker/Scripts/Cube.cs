@@ -30,7 +30,7 @@ public class Cube : MonoBehaviour
         cubeFinalColor = _FinalColor;
         MaxHealthOfCube = _Health;
         cubeUntouchedColor = _UntouchColor;
-        cubeHealth = MaxHealthOfCube; ;
+        cubeHealth = MaxHealthOfCube;
         CubeColorIncrease = (cubeFinalColor - cubeUntouchedColor) / (cubeHealth - 1);
 
         // Getting rigidbody
@@ -72,9 +72,6 @@ public class Cube : MonoBehaviour
         newMoneyText = Instantiate(MoneyText, transform.position+new Vector3(0,0.3f,0), Quaternion.identity, transform);
         newMoneyText.GetComponent<TextMesh>().text = ("+$$" + _MoneyDrop);
         Destroy(newMoneyText,1);
-        // Will print the 3d $$ once broken.
-        // Vector3 force = cubeRow * cubeColumn;
-        // TextDisplay = ("$$ " + IntToString(_MoneyDrop));
 
         rend.material.color = cubeUntouchedColor;
         cubeHealth = MaxHealthOfCube;
@@ -83,5 +80,16 @@ public class Cube : MonoBehaviour
     private void CubeHit()
     {
         rend.material.color += CubeColorIncrease;
+    }
+
+    public void CubeHealthDecrease()
+    {
+        MaxHealthOfCube--;
+        if (cubeHealth>MaxHealthOfCube)
+        {
+            cubeHealth--;
+            CubeHit();
+        }
+        CubeColorIncrease = (cubeFinalColor - cubeUntouchedColor) / (cubeHealth - 1);
     }
 }

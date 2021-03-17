@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Pet_1 : MonoBehaviour
+public class Pet_3 : MonoBehaviour
 {
     // cost and level and current money
     private int Level = 0;
@@ -18,26 +18,33 @@ public class Pet_1 : MonoBehaviour
 
     // Money variable gets in start
     public Money money;
+    public CubeHandler cubeHandler;
+    public GameObject Locked1;
 
     // Start is called before the first frame update
     void Start()
     {
         money = FindObjectOfType<Money>();
+        cubeHandler = FindObjectOfType<CubeHandler>();
         //money.MoneyValue
 
-        cost = (Mathf.RoundToInt(10 * (Mathf.Pow(1.2f, Level))));
+        cost = (Mathf.RoundToInt(1000 * (Mathf.Pow(2f, Level))));
 
         BuyPet.interactable = false;
 
-        LevelOutput.text=("Level: " + Level);
-        CostOutput.text =("$$" + cost.ToString("N0"));
-
-        StartCoroutine(FarmingMoney());
+        LevelOutput.text = ("Level: " + Level);
+        CostOutput.text = ("$$" + cost.ToString("N0"));
     }
 
     // Update is called once per frame
     void Update()
     {
+        CurrentMoney = money.MoneyValue;
+        if (CurrentMoney > 1000)
+        {
+            Locked1.SetActive(false);
+        }
+
         CurrentMoney = money.MoneyValue;
         if (CurrentMoney >= cost)
         {
@@ -50,22 +57,15 @@ public class Pet_1 : MonoBehaviour
     }
     public void PurchasePet()
     {
-        if (CurrentMoney>=cost)
+        if (CurrentMoney >= cost)
         {
+
             money.MoneyLost(cost);
             Level++;
-            cost = (Mathf.RoundToInt(10*(Mathf.Pow(1.2f, Level))));
+            cost = (Mathf.RoundToInt(1000 * (Mathf.Pow(2f, Level))));
             LevelOutput.text = ("Level: " + Level);
             CostOutput.text = ("$$" + cost.ToString("N0"));
-        }
-    }
-
-    private IEnumerator FarmingMoney()
-    {
-        while(true)
-        {
-            yield return new WaitForSeconds(0.6f);
-            money.MoneyGained(Level*100);
+            cubeHandler.IncreaseCubeMoney();
         }
     }
 }
