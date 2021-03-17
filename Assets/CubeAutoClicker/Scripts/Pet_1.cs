@@ -65,7 +65,7 @@ public class Pet_1 : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(0.6f);
-            money.MoneyGained(Level*100);
+            money.MoneyGained(Level);
         }
     }
 }
