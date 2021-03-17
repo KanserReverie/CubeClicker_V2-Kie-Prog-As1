@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Money : MonoBehaviour
 {
+    public int MoneyValue { get { return money; } }
+
     private int money;
     public Text moneyDisplay;
     private string pricingText = "$$";

@@ -11,6 +11,6 @@ public class MoneyText : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.velocity = new Vector3(0, 4, 0);
-        Object.Destroy(gameObject, 1);
+        Destroy(gameObject, 1);
     }
 }
