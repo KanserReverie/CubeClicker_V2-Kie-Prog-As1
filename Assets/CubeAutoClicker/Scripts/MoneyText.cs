@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoneyText : MonoBehaviour
 {
+    // sext to be made when a cube is broken
     // Will move up and then disapear after 2 seconds.
     public Rigidbody rb;
 

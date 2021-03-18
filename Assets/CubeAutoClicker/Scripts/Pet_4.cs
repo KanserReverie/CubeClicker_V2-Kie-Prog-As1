@@ -22,12 +22,11 @@ public class Pet_4 : MonoBehaviour
     public CubeHandler cubeHandler;
     public GameObject Locked2;
 
-    // Start is called before the first frame update
+    // sets up variables including cost and such
     void Start()
     {
         money = FindObjectOfType<Money>();
         cubeHandler = FindObjectOfType<CubeHandler>();
-        //money.MoneyValue
 
         cost = (Mathf.RoundToInt(5000 * (Mathf.Pow(1.5f, Level))));
 
@@ -37,7 +36,7 @@ public class Pet_4 : MonoBehaviour
         CostOutput.text = ("$$" + cost.ToString("N0"));
     }
 
-    // Update is called once per frame
+    // lets you buy if money is good and below max level
     void Update()
     {
         CurrentMoney = money.MoneyValue;
@@ -61,6 +60,9 @@ public class Pet_4 : MonoBehaviour
             CostOutput.text = ("MAX!!");
         }
     }
+
+    // runs if they buy the pet
+    // will lower health of all cubes
     public void PurchasePet()
     {
         if (CurrentMoney >= cost)

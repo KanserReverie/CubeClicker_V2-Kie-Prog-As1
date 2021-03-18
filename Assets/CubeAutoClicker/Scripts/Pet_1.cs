@@ -19,7 +19,7 @@ public class Pet_1 : MonoBehaviour
     // Money variable gets in start
     public Money money;
 
-    // Start is called before the first frame update
+    // sets up all relevent variables
     void Start()
     {
         money = FindObjectOfType<Money>();
@@ -35,7 +35,7 @@ public class Pet_1 : MonoBehaviour
         StartCoroutine(FarmingMoney());
     }
 
-    // Update is called once per frame
+    // lets them buy if they have the money
     void Update()
     {
         CurrentMoney = money.MoneyValue;
@@ -48,6 +48,9 @@ public class Pet_1 : MonoBehaviour
             BuyPet.interactable = false;
         }
     }
+
+    // runs when they but the pet
+    // gets money every second
     public void PurchasePet()
     {
         if (CurrentMoney>=cost)
@@ -60,6 +63,7 @@ public class Pet_1 : MonoBehaviour
         }
     }
 
+    // co routine for them to get money equal to level
     private IEnumerator FarmingMoney()
     {
         while(true)

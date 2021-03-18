@@ -12,9 +12,7 @@ public class Cube : MonoBehaviour
     private int cubeColumn;
     private Color cubeUntouchedColor;
     private Color cubeFinalColor;
-    private int moneyDropped;
     private int cubeHealth;
-    private bool cubeBroke;
     private int MaxHealthOfCube;
     private Color CubeColorIncrease;
     public TextMeshPro MoneyTextDesplay;
@@ -70,26 +68,37 @@ public class Cube : MonoBehaviour
         }
     }
 
+    // will run if cube drops and makes money
     public void Break(int _MoneyDrop)
     {
         GameObject newMoneyText = Instantiate(MoneyText, transform.position+new Vector3(0,0.3f,0), Quaternion.identity, transform);
         newMoneyText.GetComponent<TextMesh>().text = ("+$$" + _MoneyDrop);
-        // Destroy(newMoneyText,1);
 
         rend.material.color = cubeUntouchedColor;
         cubeHealth = MaxHealthOfCube;
     }
 
+    // change color if hit 
     private void CubeHit()
     {
         rend.material.color += CubeColorIncrease;
     }
 
+    // if the moster decreases all cubes health it runs this
+    // decreases max health and changes all relevent variables
     public void CubeHealthDecrease()
     {
         MaxHealthOfCube--;
-        cubeHealth--;
-        CubeColorIncrease = (cubeFinalColor - cubeUntouchedColor) / (MaxHealthOfCube - 1);
-        rend.material.color += cubeFinalColor * (MaxHealthOfCube - cubeHealth);
+        if (cubeHealth > 1)
+        {
+            cubeHealth--;
+            CubeColorIncrease = (cubeFinalColor - cubeUntouchedColor) / (MaxHealthOfCube - 1);
+            rend.material.color = cubeUntouchedColor - cubeFinalColor * (MaxHealthOfCube - cubeHealth);
+        }
+        else if (cubeHealth<=1)
+        {
+            CubeColorIncrease = (cubeFinalColor - cubeUntouchedColor) / (MaxHealthOfCube - 1);
+            rend.material.color = cubeFinalColor + CubeColorIncrease;
+        }
     }
 }

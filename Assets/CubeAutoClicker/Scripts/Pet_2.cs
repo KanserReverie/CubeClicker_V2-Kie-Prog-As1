@@ -21,14 +21,13 @@ public class Pet_2 : MonoBehaviour
     public Money money;
     public CubeHandler cubeHandler;
 
-    // Start is called before the first frame update
+    // sets up the variables
     void Start()
     {
         money = FindObjectOfType<Money>();
         cubeHandler = FindObjectOfType<CubeHandler>();
-        //money.MoneyValue
 
-        cost = (Mathf.RoundToInt(100 * (Mathf.Pow(1.6f, Level))));
+        cost = (Mathf.RoundToInt(100 * (Mathf.Pow(1.2f, Level))));
 
         BuyPet.interactable = false;
 
@@ -36,7 +35,7 @@ public class Pet_2 : MonoBehaviour
         CostOutput.text = ("$$" + cost.ToString("N0"));
     }
 
-    // Update is called once per frame
+    // lets them purchace the pet if they have the money
     void Update()
     {
         CurrentMoney = money.MoneyValue;
@@ -55,6 +54,9 @@ public class Pet_2 : MonoBehaviour
             CostOutput.text = ("MAX!!");
         }
     }
+
+    // runs if they buy the pet
+    // clicks the cube every second
     public void PurchasePet()
     {
         if (CurrentMoney >= cost)
@@ -65,12 +67,14 @@ public class Pet_2 : MonoBehaviour
             }
             money.MoneyLost(cost);
             Level++;
-            cost = (Mathf.RoundToInt(100 * (Mathf.Pow(1.6f, Level))));
+            cost = (Mathf.RoundToInt(100 * (Mathf.Pow(1.2f, Level))));
             LevelOutput.text = ("Level: " + Level);
             CostOutput.text = ("$$" + cost.ToString("N0"));
         }
     }
 
+    // coroutine if they buy the pet
+    // auto clicking paster per level
     private IEnumerator FarmingClicks()
     {
         while (true)
