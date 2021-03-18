@@ -10,6 +10,7 @@ public class Pet_3 : MonoBehaviour
     private int Level = 0;
     private int cost;
     private int CurrentMoney;
+    private int MaxLevel;
 
     // all necasery inputs
     public TMP_Text LevelOutput;
@@ -21,13 +22,15 @@ public class Pet_3 : MonoBehaviour
     public CubeHandler cubeHandler;
     public GameObject Locked1;
 
+
     // sets up all the variables
     void Start()
     {
+        MaxLevel = 5;
         money = FindObjectOfType<Money>();
         cubeHandler = FindObjectOfType<CubeHandler>();
 
-        cost = (Mathf.RoundToInt(1000 * (Mathf.Pow(1.4f, Level))));
+        cost = (Mathf.RoundToInt(1000 * (Mathf.Pow(2f, Level))));
 
         BuyPet.interactable = false;
 
@@ -45,13 +48,18 @@ public class Pet_3 : MonoBehaviour
         }
 
         CurrentMoney = money.MoneyValue;
-        if (CurrentMoney >= cost)
+        if (CurrentMoney >= cost && Level < MaxLevel)
         {
             BuyPet.interactable = true;
         }
-        else
+        else if (CurrentMoney < cost && Level < MaxLevel)
         {
             BuyPet.interactable = false;
+        }
+        else if (Level >= MaxLevel)
+        {
+            BuyPet.interactable = false;
+            CostOutput.text = ("MAX!!");
         }
     }
 
@@ -64,7 +72,7 @@ public class Pet_3 : MonoBehaviour
 
             money.MoneyLost(cost);
             Level++;
-            cost = (Mathf.RoundToInt(1000 * (Mathf.Pow(1.4f, Level))));
+            cost = (Mathf.RoundToInt(1000 * (Mathf.Pow(2f, Level))));
             LevelOutput.text = ("Level: " + Level);
             CostOutput.text = ("$$" + cost.ToString("N0"));
             cubeHandler.IncreaseCubeMoney();

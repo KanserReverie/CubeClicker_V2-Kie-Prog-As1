@@ -17,6 +17,9 @@ public class Cube : MonoBehaviour
     private Color CubeColorIncrease;
     public TextMeshPro MoneyTextDesplay;
     public GameObject MoneyText;
+    private bool cubeHitOnce;
+    private ParticleSystem Part;
+
 
     // Gets Rigidbody
     private Rigidbody rb;
@@ -27,6 +30,9 @@ public class Cube : MonoBehaviour
     // set up cube with variables
     public void CubeSetup(int _Row, int _Col, Color _FinalColor, int _Health, Color _UntouchColor, Material _CubeMaterial)
     {
+        Part = GetComponent<ParticleSystem>();
+        Part.Stop();
+        cubeHitOnce = false;
         cubeRow = _Row;
         cubeColumn = _Col;
         cubeFinalColor = _FinalColor;
@@ -56,6 +62,14 @@ public class Cube : MonoBehaviour
     // cube click code to decrease health
     public bool Click()
     {
+        if (cubeHitOnce == false)
+        {   
+            Part.Play();
+            ParticleSystem.MainModule PartMain = Part.main;
+            PartMain.startColor = cubeFinalColor;
+            cubeHitOnce = true;
+        }
+
         cubeHealth--;
         if (cubeHealth <= 0)
         {
@@ -93,12 +107,12 @@ public class Cube : MonoBehaviour
         {
             cubeHealth--;
             CubeColorIncrease = (cubeFinalColor - cubeUntouchedColor) / (MaxHealthOfCube - 1);
-            rend.material.color = cubeUntouchedColor - cubeFinalColor * (MaxHealthOfCube - cubeHealth);
+            rend.material.color = cubeUntouchedColor + CubeColorIncrease * (MaxHealthOfCube - cubeHealth);
         }
         else if (cubeHealth<=1)
         {
             CubeColorIncrease = (cubeFinalColor - cubeUntouchedColor) / (MaxHealthOfCube - 1);
-            rend.material.color = cubeFinalColor + CubeColorIncrease;
+            rend.material.color = cubeFinalColor - CubeColorIncrease;
         }
     }
 }

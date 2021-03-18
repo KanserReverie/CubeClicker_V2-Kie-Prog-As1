@@ -105,6 +105,11 @@ public class CubeHandler : MonoBehaviour
 
                  if (CurCol >= ColMax)
                  {
+                    if(CurRow>=RowMax)
+                    {
+                        EndGame();
+                        return;
+                    }
                      CurCol = 0;
                      CurRow++;
                  }
@@ -145,5 +150,11 @@ public class CubeHandler : MonoBehaviour
                 cubeGrid[y, x].GetComponent<Cube>().CubeHealthDecrease();
             }
         }
+    }
+
+    // End of game script.
+    private void EndGame()
+    {
+
     }
 }

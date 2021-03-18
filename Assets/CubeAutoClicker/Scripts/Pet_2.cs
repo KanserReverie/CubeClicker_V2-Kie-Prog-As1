@@ -27,7 +27,7 @@ public class Pet_2 : MonoBehaviour
         money = FindObjectOfType<Money>();
         cubeHandler = FindObjectOfType<CubeHandler>();
 
-        cost = (Mathf.RoundToInt(100 * (Mathf.Pow(1.2f, Level))));
+        cost = (Mathf.RoundToInt(100 * (Mathf.Pow(1.1f, Level))));
 
         BuyPet.interactable = false;
 
@@ -79,7 +79,7 @@ public class Pet_2 : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(4.1f - Level*0.2f);
+            yield return new WaitForSeconds(4.01f - Level*0.2f);
             cubeHandler.Click();
         }
     }
