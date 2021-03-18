@@ -420,7 +420,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 939825830}
+      - m_Target: {fileID: 1161089312}
         m_TargetAssemblyTypeName: Pet_4, Assembly-CSharp
         m_MethodName: PurchasePet
         m_Mode: 1
@@ -639,10 +639,10 @@ RectTransform:
   m_Father: {fileID: 1494569997}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -94, y: 0}
-  m_SizeDelta: {x: -452.7835, y: -81.3323}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 366, y: -5}
+  m_SizeDelta: {x: 579.21655, y: 464.0171}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &249946590
 MonoBehaviour:
@@ -766,8 +766,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1251,10 +1251,10 @@ RectTransform:
   m_Father: {fileID: 249946589}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 191.57, y: 192.04}
-  m_SizeDelta: {x: 100.0033, y: 55.16}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 201, y: 172.44}
+  m_SizeDelta: {x: -475.1355, y: -399.8783}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614331436
 MonoBehaviour:
@@ -1301,12 +1301,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 249946588}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1556,10 +1556,10 @@ RectTransform:
   m_Father: {fileID: 874524280}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.19999695, y: -306.8}
-  m_SizeDelta: {x: 465.04248, y: 69.58481}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.2000122, y: -130.29999}
+  m_SizeDelta: {x: -36.95752, y: -283.4152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &733562908
 MonoBehaviour:
@@ -1610,7 +1610,6 @@ GameObject:
   - component: {fileID: 744315793}
   - component: {fileID: 744315795}
   - component: {fileID: 744315794}
-  - component: {fileID: 744315796}
   m_Layer: 5
   m_Name: Goblin
   m_TagString: Untagged
@@ -1637,10 +1636,10 @@ RectTransform:
   m_Father: {fileID: 874524280}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.2000122, y: -136}
-  m_SizeDelta: {x: -34.95749, y: 69.58481}
+  m_AnchoredPosition: {x: 0.2000122, y: 40.5}
+  m_SizeDelta: {x: -34.95749, y: -283.4152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &744315794
 MonoBehaviour:
@@ -1680,23 +1679,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744315792}
   m_CullTransparentMesh: 1
---- !u!114 &744315796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744315792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 345330f0da64e9a4ea10977b6bcd7638, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelOutput: {fileID: 770067759}
-  CostOutput: {fileID: 1509731292}
-  BuyPet: {fileID: 2041659352}
-  money: {fileID: 1248542612}
-  cubeHandler: {fileID: 774098809}
 --- !u!1 &770067757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,7 +2090,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 813748864}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 249946588}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &813748864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2373,7 +2367,6 @@ GameObject:
   - component: {fileID: 939825827}
   - component: {fileID: 939825829}
   - component: {fileID: 939825828}
-  - component: {fileID: 939825830}
   m_Layer: 5
   m_Name: Mushroom
   m_TagString: Untagged
@@ -2400,10 +2393,10 @@ RectTransform:
   m_Father: {fileID: 874524280}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.2000122, y: -306.8}
-  m_SizeDelta: {x: -34.95749, y: 69.58481}
+  m_AnchoredPosition: {x: 0.2000122, y: -130.29999}
+  m_SizeDelta: {x: -34.95749, y: -283.4152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &939825828
 MonoBehaviour:
@@ -2443,24 +2436,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939825826}
   m_CullTransparentMesh: 1
---- !u!114 &939825830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939825826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a4a278584101334e8df0d9d1b46578b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelOutput: {fileID: 1559377200}
-  CostOutput: {fileID: 897966827}
-  BuyPet: {fileID: 124051354}
-  money: {fileID: 1248542612}
-  cubeHandler: {fileID: 774098809}
-  Locked2: {fileID: 733562906}
 --- !u!1 &946388394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,10 +2603,10 @@ RectTransform:
   m_Father: {fileID: 8780156512033608843}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -14}
-  m_SizeDelta: {x: 50, y: 20}
+  m_SizeDelta: {x: -12, y: -28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &948443015
 MonoBehaviour:
@@ -3612,7 +3587,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1811596091}
+      - m_Target: {fileID: 1161089313}
         m_TargetAssemblyTypeName: Pet_3, Assembly-CSharp
         m_MethodName: PurchasePet
         m_Mode: 1
@@ -3672,6 +3647,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1161089310}
   - component: {fileID: 1161089311}
+  - component: {fileID: 1161089315}
+  - component: {fileID: 1161089314}
+  - component: {fileID: 1161089313}
+  - component: {fileID: 1161089312}
   m_Layer: 0
   m_Name: Pet Manager
   m_TagString: Untagged
@@ -3705,7 +3684,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2129aabd1eefa8649bdae0490d5dbedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pets: []
+--- !u!114 &1161089312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161089309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4a278584101334e8df0d9d1b46578b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelOutput: {fileID: 1559377200}
+  CostOutput: {fileID: 897966827}
+  BuyPet: {fileID: 124051354}
+  money: {fileID: 1248542612}
+  cubeHandler: {fileID: 774098809}
+  Locked2: {fileID: 733562906}
+--- !u!114 &1161089313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161089309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c5a56ea81456a42b0d1f9d7ae8e2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelOutput: {fileID: 1913024654}
+  CostOutput: {fileID: 491557447}
+  BuyPet: {fileID: 1154857086}
+  money: {fileID: 1248542612}
+  cubeHandler: {fileID: 774098809}
+  Locked1: {fileID: 1466003566}
+--- !u!114 &1161089314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161089309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345330f0da64e9a4ea10977b6bcd7638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelOutput: {fileID: 770067759}
+  CostOutput: {fileID: 1509731292}
+  BuyPet: {fileID: 2041659352}
+  money: {fileID: 1248542612}
+  cubeHandler: {fileID: 774098809}
+--- !u!114 &1161089315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161089309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e9f20549b5d43a4082fa66656d4692d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelOutput: {fileID: 7060663796482578603}
+  CostOutput: {fileID: 948443015}
+  BuyPet: {fileID: 7675794042109786103}
+  money: {fileID: 1248542612}
 --- !u!1 &1188542341
 GameObject:
   m_ObjectHideFlags: 0
@@ -4171,10 +4218,10 @@ RectTransform:
   m_Father: {fileID: 874524280}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.2000122, y: -222}
-  m_SizeDelta: {x: -34.95749, y: 69.58481}
+  m_AnchoredPosition: {x: 0.2000122, y: -45.5}
+  m_SizeDelta: {x: -34.95749, y: -283.4152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466003568
 MonoBehaviour:
@@ -4481,10 +4528,10 @@ RectTransform:
   m_Father: {fileID: 249946589}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -49.8, y: 200}
-  m_SizeDelta: {x: 388.009, y: 39.2409}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -52.436005, y: 171}
+  m_SizeDelta: {x: -191.991, y: -402.7591}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1523298604
 MonoBehaviour:
@@ -5262,7 +5309,6 @@ GameObject:
   - component: {fileID: 1811596088}
   - component: {fileID: 1811596090}
   - component: {fileID: 1811596089}
-  - component: {fileID: 1811596091}
   m_Layer: 5
   m_Name: Skeleton
   m_TagString: Untagged
@@ -5289,10 +5335,10 @@ RectTransform:
   m_Father: {fileID: 874524280}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.2000122, y: -222}
-  m_SizeDelta: {x: -34.95749, y: 69.58481}
+  m_AnchoredPosition: {x: 0.2000122, y: -45.5}
+  m_SizeDelta: {x: -34.95749, y: -283.4152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1811596089
 MonoBehaviour:
@@ -5332,24 +5378,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811596087}
   m_CullTransparentMesh: 1
---- !u!114 &1811596091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1811596087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50c5a56ea81456a42b0d1f9d7ae8e2e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelOutput: {fileID: 1913024654}
-  CostOutput: {fileID: 491557447}
-  BuyPet: {fileID: 1154857086}
-  money: {fileID: 1248542612}
-  cubeHandler: {fileID: 774098809}
-  Locked1: {fileID: 1466003566}
 --- !u!1 &1875535960
 GameObject:
   m_ObjectHideFlags: 0
@@ -5860,7 +5888,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 744315796}
+      - m_Target: {fileID: 1161089314}
         m_TargetAssemblyTypeName: Pet_2, Assembly-CSharp
         m_MethodName: PurchasePet
         m_Mode: 1
@@ -6058,10 +6086,10 @@ RectTransform:
   m_Father: {fileID: 184937285118293433}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -33.4, y: 5.6}
-  m_SizeDelta: {x: 238.0724, y: 112.084}
+  m_AnchoredPosition: {x: 195.6, y: 5.600006}
+  m_SizeDelta: {x: -219.9276, y: 112.084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &184937285118293433
 RectTransform:
@@ -6082,10 +6110,10 @@ RectTransform:
   m_Father: {fileID: 874524280}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.2000122, y: -50.999992}
-  m_SizeDelta: {x: -34.95749, y: 69.58481}
+  m_AnchoredPosition: {x: 0.2000122, y: 125.50001}
+  m_SizeDelta: {x: -34.95749, y: -283.4152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &722471057668753399
 MonoBehaviour:
@@ -6205,7 +6233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6.8499975}
+  m_AnchoredPosition: {x: 0, y: 6.849991}
   m_SizeDelta: {x: 0, y: -3.699995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972505004910369104
@@ -6427,10 +6455,10 @@ RectTransform:
   m_Father: {fileID: 184937285118293433}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 225, y: -50}
-  m_SizeDelta: {x: 292, y: 33}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -4, y: -15}
+  m_SizeDelta: {x: -166, y: -37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3463265629617424038
 MonoBehaviour:
@@ -6607,10 +6635,10 @@ RectTransform:
   m_Father: {fileID: 184937285118293433}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 205, y: -17}
-  m_SizeDelta: {x: 247.8702, y: 18.195}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -24, y: 18}
+  m_SizeDelta: {x: -210.1298, y: -51.805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5972852508436964703
 GameObject:
@@ -6641,7 +6669,6 @@ GameObject:
   - component: {fileID: 184937285118293433}
   - component: {fileID: 1415259272325637277}
   - component: {fileID: 4897418893631597180}
-  - component: {fileID: 6277911290732300769}
   m_Layer: 5
   m_Name: Flying eye
   m_TagString: Untagged
@@ -6649,22 +6676,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6277911290732300769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6277911290732300768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e9f20549b5d43a4082fa66656d4692d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LevelOutput: {fileID: 7060663796482578603}
-  CostOutput: {fileID: 948443015}
-  BuyPet: {fileID: 7675794042109786103}
-  money: {fileID: 1248542612}
 --- !u!114 &7060663796482578603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6806,7 +6817,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6277911290732300769}
+      - m_Target: {fileID: 1161089315}
         m_TargetAssemblyTypeName: Pet_1, Assembly-CSharp
         m_MethodName: PurchasePet
         m_Mode: 1
@@ -6850,10 +6861,10 @@ RectTransform:
   m_Father: {fileID: 184937285118293433}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355, y: -20}
-  m_SizeDelta: {x: 92.5805, y: 24.122002}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 126, y: 15}
+  m_SizeDelta: {x: -365.4195, y: -45.878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &8780156512033608843
 RectTransform:
@@ -6871,10 +6882,10 @@ RectTransform:
   m_Father: {fileID: 184937285118293433}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 40.8, y: 0}
-  m_SizeDelta: {x: 61.3258, y: 48.2442}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -188.2, y: 0}
+  m_SizeDelta: {x: -396.6742, y: -21.755798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9055912339670359607
 MonoBehaviour:

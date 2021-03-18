@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PetMenu : MonoBehaviour
+
+public class Fullscreen : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+     //        Screen.fullScreen = false;
+        Screen.SetResolution(1024, 768, false);
     }
 }

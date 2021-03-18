@@ -83,6 +83,7 @@ public class CubeHandler : MonoBehaviour
         }
     }
 
+    // clicks and gets money
      public void Click()
      {
          bool CubeDone = false;
@@ -90,6 +91,7 @@ public class CubeHandler : MonoBehaviour
          int CurCol = 0;
          int moneyMade = 0;
 
+        // I did it here is a do while loop
          do
          {
              CubeDone = cubeGrid[CurRow, CurCol].GetComponent<Cube>().Click();
@@ -109,6 +111,7 @@ public class CubeHandler : MonoBehaviour
          } while (CubeDone == true);
      }
 
+    // Runs if cube breaks and finds out how much money to give.
      private int CubeBreakMoney(int _CubeRow, int _CubeCol)
      {
         int MoneyGained =                            // Used to be some confusing thing but basically:
@@ -122,10 +125,13 @@ public class CubeHandler : MonoBehaviour
         return MoneyGained;
      }
 
+    // Increase how much money a cube gives.
     public void IncreaseCubeMoney()
     {
         moneyBaseIncreaseForBreakingCube++;
     }
+
+    // Decreases cube health by 1.
     public void DecreaseCubeHealth()
     {   
 

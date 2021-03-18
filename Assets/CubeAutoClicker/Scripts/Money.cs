@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Money : MonoBehaviour
 {
+    // Gets vv
     public int MoneyValue { get { return money; } }
 
     private int money;

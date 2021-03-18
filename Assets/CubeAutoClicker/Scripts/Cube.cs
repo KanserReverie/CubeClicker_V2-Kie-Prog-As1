@@ -6,6 +6,8 @@ using TMPro;
 
 public class Cube : MonoBehaviour
 {
+    // All variables for cube
+
     private int cubeRow;
     private int cubeColumn;
     private Color cubeUntouchedColor;
@@ -17,12 +19,14 @@ public class Cube : MonoBehaviour
     private Color CubeColorIncrease;
     public TextMeshPro MoneyTextDesplay;
     public GameObject MoneyText;
+
     // Gets Rigidbody
     private Rigidbody rb;
 
     private Material cubeMaterial;
     Renderer rend;
 
+    // set up cube with variables
     public void CubeSetup(int _Row, int _Col, Color _FinalColor, int _Health, Color _UntouchColor, Material _CubeMaterial)
     {
         cubeRow = _Row;
@@ -45,12 +49,13 @@ public class Cube : MonoBehaviour
 
     }
 
-    // Might add particle system.
+    // Updates health
     private void Update()
     {
         MoneyTextDesplay.text = cubeHealth + "/" + MaxHealthOfCube;
     }
 
+    // c
     public bool Click()
     {
         cubeHealth--;
@@ -67,11 +72,9 @@ public class Cube : MonoBehaviour
 
     public void Break(int _MoneyDrop)
     {
-        GameObject newMoneyText = new GameObject();
-
-        newMoneyText = Instantiate(MoneyText, transform.position+new Vector3(0,0.3f,0), Quaternion.identity, transform);
+        GameObject newMoneyText = Instantiate(MoneyText, transform.position+new Vector3(0,0.3f,0), Quaternion.identity, transform);
         newMoneyText.GetComponent<TextMesh>().text = ("+$$" + _MoneyDrop);
-        Destroy(newMoneyText,1);
+        // Destroy(newMoneyText,1);
 
         rend.material.color = cubeUntouchedColor;
         cubeHealth = MaxHealthOfCube;
