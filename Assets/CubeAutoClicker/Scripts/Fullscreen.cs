@@ -9,6 +9,6 @@ public class Fullscreen : MonoBehaviour
     void Start()
     {
      //        Screen.fullScreen = false;
-        Screen.SetResolution(1024, 768, false);
+        Screen.SetResolution(1024, 868, false);
     }
 }

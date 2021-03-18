@@ -55,7 +55,7 @@ public class Cube : MonoBehaviour
         MoneyTextDesplay.text = cubeHealth + "/" + MaxHealthOfCube;
     }
 
-    // c
+    // cube click code to decrease health
     public bool Click()
     {
         cubeHealth--;
@@ -88,11 +88,8 @@ public class Cube : MonoBehaviour
     public void CubeHealthDecrease()
     {
         MaxHealthOfCube--;
-        if (cubeHealth>MaxHealthOfCube)
-        {
-            cubeHealth--;
-            CubeHit();
-        }
-        CubeColorIncrease = (cubeFinalColor - cubeUntouchedColor) / (cubeHealth - 1);
+        cubeHealth--;
+        CubeColorIncrease = (cubeFinalColor - cubeUntouchedColor) / (MaxHealthOfCube - 1);
+        rend.material.color += cubeFinalColor * (MaxHealthOfCube - cubeHealth);
     }
 }

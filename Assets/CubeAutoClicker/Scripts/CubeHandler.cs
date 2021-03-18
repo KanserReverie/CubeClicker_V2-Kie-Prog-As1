@@ -24,7 +24,7 @@ public class CubeHandler : MonoBehaviour
     // Base health of cubes.
     // Everything is pretty based, on 8.
     // Will be changed in pets.
-    private int baseHealthOfCubes = 8;
+    private int baseHealthOfCubes = 4;
         // This is an array of Cube. Remember these are still GameObjects.
             // To call Cube on each one you need:
                 // cubeGrid[x,y].GetComponent<Cube>().ScriptWantToCall;
@@ -102,7 +102,7 @@ public class CubeHandler : MonoBehaviour
                  cubeGrid[CurRow, CurCol].GetComponent<Cube>().Break(moneyMade);
                  CurCol++;
 
-                 if (CurCol > ColMax)
+                 if (CurCol >= ColMax)
                  {
                      CurCol = 0;
                      CurRow++;
