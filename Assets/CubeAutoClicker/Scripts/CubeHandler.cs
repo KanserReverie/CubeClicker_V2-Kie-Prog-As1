@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CubeHandler : MonoBehaviour
 {
@@ -59,9 +61,13 @@ public class CubeHandler : MonoBehaviour
             public Material cubeMaterial;
     private int ss = 1;
 
+    public Text ButtonClickText;
+
 
     private void Start()
     {
+
+        //PanelBuy.interactable = false;
         // sets up game objects and instansiates them
         GameObject newCube = new GameObject();
         Vector3 extraDistance = new Vector3(0, 0, 0);
@@ -105,11 +111,6 @@ public class CubeHandler : MonoBehaviour
 
                  if (CurCol >= ColMax)
                  {
-                    if(CurRow>=RowMax)
-                    {
-                        EndGame();
-                        return;
-                    }
                      CurCol = 0;
                      CurRow++;
                  }
@@ -121,11 +122,12 @@ public class CubeHandler : MonoBehaviour
      private int CubeBreakMoney(int _CubeRow, int _CubeCol)
      {
         int MoneyGained =                            // Used to be some confusing thing but basically:
-            (Mathf.RoundToInt                        //     Makes following int
-            (Mathf.Pow                               //         Puts following to power
-            (moneyBaseIncreaseForBreakingCube,       //             Base amount for killing cube in begining - e.g. 4
-            ((_CubeRow) * ColMax) + (_CubeCol)       //             Where the cube is in the array starting at 0
-            )));                                     //     Because computers start arrays at 0 anything > 0 to power of 0 = 1
+            (Mathf.RoundToInt(                        //     Makes following int
+            moneyBaseIncreaseForBreakingCube*//         Puts following to power
+            (Mathf.Pow
+            ((((_CubeRow) * ColMax) + (_CubeCol+1))       //             Where the cube is in the array starting at 0
+            , 2
+            ))));                                     //     Because computers start arrays at 0 anything > 0 to power of 0 = 1
 
         MoneyCount.MoneyGained(MoneyGained);
         return MoneyGained;
@@ -150,11 +152,5 @@ public class CubeHandler : MonoBehaviour
                 cubeGrid[y, x].GetComponent<Cube>().CubeHealthDecrease();
             }
         }
-    }
-
-    // End of game script.
-    private void EndGame()
-    {
-
     }
 }

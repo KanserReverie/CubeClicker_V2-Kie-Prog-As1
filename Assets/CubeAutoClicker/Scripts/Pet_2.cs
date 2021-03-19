@@ -10,7 +10,10 @@ public class Pet_2 : MonoBehaviour
     private int Level = 0;
     private int cost;
     private int CurrentMoney;
-    private int MaxLevel=20;
+    private int MaxLevel=10;
+    private int basePrice=100;
+    private float priceIncrese = 1.6f;
+
 
     // all necasery inputs
     public TMP_Text LevelOutput;
@@ -27,7 +30,7 @@ public class Pet_2 : MonoBehaviour
         money = FindObjectOfType<Money>();
         cubeHandler = FindObjectOfType<CubeHandler>();
 
-        cost = (Mathf.RoundToInt(100 * (Mathf.Pow(1.1f, Level))));
+        cost = (Mathf.RoundToInt(basePrice * (Mathf.Pow(priceIncrese, Level))));
 
         BuyPet.interactable = false;
 
@@ -67,7 +70,7 @@ public class Pet_2 : MonoBehaviour
             }
             money.MoneyLost(cost);
             Level++;
-            cost = (Mathf.RoundToInt(100 * (Mathf.Pow(1.2f, Level))));
+            cost = (Mathf.RoundToInt(basePrice * (Mathf.Pow(priceIncrese, Level))));
             LevelOutput.text = ("Level: " + Level);
             CostOutput.text = ("$$" + cost.ToString("N0"));
         }
@@ -79,7 +82,7 @@ public class Pet_2 : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(4.01f - Level*0.2f);
+            yield return new WaitForSeconds(4.05f - Level*0.4f);
             cubeHandler.Click();
         }
     }
