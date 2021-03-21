@@ -25,7 +25,7 @@ public class Pet_1 : MonoBehaviour
         money = FindObjectOfType<Money>();
         //money.MoneyValue
 
-        cost = (Mathf.RoundToInt(10 * (Mathf.Pow(1.2f, Level))));
+        cost = (Mathf.RoundToInt(10 * (Mathf.Pow(1.3f, Level))));
 
         BuyPet.interactable = false;
 

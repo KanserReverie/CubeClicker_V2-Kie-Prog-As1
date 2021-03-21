@@ -59,7 +59,6 @@ public class CubeHandler : MonoBehaviour
         //The Material of each cube.
             // Each cube needs a material to change color of it.
             public Material cubeMaterial;
-    private int ss = 1;
 
     public Text ButtonClickText;
 
@@ -77,7 +76,6 @@ public class CubeHandler : MonoBehaviour
         {
             for (int x = 0; x < ColMax; x++)
             {
-                ss++;
                 extraDistance = new Vector3(x * cubeDistanceBetweenCubes, 0, y * cubeDistanceBetweenCubes);
                 newCube = Instantiate(CubePrefab, transform.position + extraDistance, Quaternion.identity, transform) as GameObject;
                 // This will get the script 'Cube' on the gameObject newCube.
@@ -100,8 +98,8 @@ public class CubeHandler : MonoBehaviour
 
         // I did it here is a do while loop
          do
-         {
-             CubeDone = cubeGrid[CurRow, CurCol].GetComponent<Cube>().Click();
+         {  
+            CubeDone = cubeGrid[CurRow, CurCol].GetComponent<Cube>().Click();
 
              if (CubeDone == true)
              {
@@ -113,21 +111,27 @@ public class CubeHandler : MonoBehaviour
                  {
                      CurCol = 0;
                      CurRow++;
-                 }
-             }
+                    if (CurRow == RowMax)
+                    {
+                        print("Done ^_^");
+                        return;
+                    }
+                }
+
+            }
          } while (CubeDone == true);
      }
 
     // Runs if cube breaks and finds out how much money to give.
      private int CubeBreakMoney(int _CubeRow, int _CubeCol)
      {
-        int MoneyGained =                            // Used to be some confusing thing but basically:
-            (Mathf.RoundToInt(                        //     Makes following int
-            moneyBaseIncreaseForBreakingCube*//         Puts following to power
-            (Mathf.Pow
-            ((((_CubeRow) * ColMax) + (_CubeCol+1))       //             Where the cube is in the array starting at 0
-            , 2
-            ))));                                     //     Because computers start arrays at 0 anything > 0 to power of 0 = 1
+        int MoneyGained =                            // It works x(y^2)
+            (Mathf.RoundToInt(                       // It works x(y^2)
+            moneyBaseIncreaseForBreakingCube*        // It works x(y^2)
+            (Mathf.Pow                               // It works x(y^2)
+            ((((_CubeRow) * ColMax) + (_CubeCol+1))  // It works x(y^2)
+            , 2                                      // It works x(y^2)
+            ))));                                    // It works x(y^2)
 
         MoneyCount.MoneyGained(MoneyGained);
         return MoneyGained;

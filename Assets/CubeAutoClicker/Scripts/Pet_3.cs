@@ -30,7 +30,7 @@ public class Pet_3 : MonoBehaviour
         money = FindObjectOfType<Money>();
         cubeHandler = FindObjectOfType<CubeHandler>();
 
-        cost = (Mathf.RoundToInt(900 * (Mathf.Pow(2f, Level))));
+        cost = (Mathf.RoundToInt(3000 * (Mathf.Pow(1.3f, Level))));
 
         BuyPet.interactable = false;
 
@@ -42,7 +42,7 @@ public class Pet_3 : MonoBehaviour
     void Update()
     {
         CurrentMoney = money.MoneyValue;
-        if (CurrentMoney > 900)
+        if (CurrentMoney > 3000)
         {
             Locked1.SetActive(false);
         }
@@ -72,7 +72,7 @@ public class Pet_3 : MonoBehaviour
 
             money.MoneyLost(cost);
             Level++;
-            cost = (Mathf.RoundToInt(900 * (Mathf.Pow(2f, Level))));
+            cost = (Mathf.RoundToInt(3000 * (Mathf.Pow(1.3f, Level))));
             LevelOutput.text = ("Level: " + Level);
             CostOutput.text = ("$$" + cost.ToString("N0"));
             cubeHandler.IncreaseCubeMoney();

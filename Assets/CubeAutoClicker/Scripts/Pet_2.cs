@@ -82,7 +82,7 @@ public class Pet_2 : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(4.05f - Level*0.4f);
+            yield return new WaitForSeconds(2.02f - Level*0.2f);
             cubeHandler.Click();
         }
     }
