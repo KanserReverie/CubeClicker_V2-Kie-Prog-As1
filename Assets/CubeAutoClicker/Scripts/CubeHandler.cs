@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -65,7 +65,6 @@ public class CubeHandler : MonoBehaviour
 
     private void Start()
     {
-
         //PanelBuy.interactable = false;
         // sets up game objects and instansiates them
         GameObject newCube = new GameObject();

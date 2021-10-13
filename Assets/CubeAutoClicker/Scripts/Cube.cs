@@ -103,6 +103,11 @@ public class Cube : MonoBehaviour
     public void CubeHealthDecrease()
     {
         MaxHealthOfCube--;
+
+        if(CubeColorIncrease.b*CubeColorIncrease.r*CubeColorIncrease.r > cubeUntouchedColor.b*cubeUntouchedColor.r*cubeUntouchedColor.g)
+        {
+            
+        }
         if (cubeHealth > 1)
         {
             cubeHealth--;
